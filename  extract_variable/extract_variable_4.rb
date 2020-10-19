@@ -25,7 +25,7 @@ class Mail
     body_fancy_style = "Welcome to MyProduct, fancy person!"
     body_normal_style = "Welcome to MyProduct"
 
-    if fancy
+    if @fancy
       mail_server.send_message({ to: @email, body: body_fancy_style })
     else
       mail_server.send_message({ to: @email, body: body_normal_style })

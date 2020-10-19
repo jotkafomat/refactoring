@@ -31,9 +31,21 @@ class Mail
   private
 
   def body
-    base_body = "Welcome to MyProduct"
-    @fancy ? "#{ base_body }, fancy person!" : base_body
+    "#{ Body.new(fancy) }"
   end
+
+  class Body
+    def initialize(fancy)
+      @fancy = fancy
+    end
+
+    def to_s
+      base_body = "Welcome to MyProduct"
+      @fancy ? "#{ base_body }, fancy person!" : base_body
+    end
+
+  end
+
 end
 
 class MailServer

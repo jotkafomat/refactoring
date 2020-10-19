@@ -5,17 +5,17 @@
 #   mail.send_message
 # end
 
-def send_email_to(user, mail)
-  email(user)
+def send_email_to(user)
+  mail = mail(user)
   mail.send_message
 end
 
-def mail
-  mail = Mail.new(email)
-  mail
+private
+def mail(user)
+  email = email(user)
+  Mail.new(email)
 end
 
 def email(user)
-  email = user.email.strip
-  email
+  user.email.strip
 end
